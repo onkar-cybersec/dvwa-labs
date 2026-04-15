@@ -26,7 +26,7 @@ Protection mechanisms were weak and could be bypassed.
 
 ## Screenshots
 
-![Request](images/request.jpg)
-![Positions](images/positions.jpg)
-![Payloads](images/payloads.jpg)
-![Results](images/results.jpg)
+![Request Captured](images/01-request.JPG)
+![Injection Point Identified](images/02-positions.JPG)
+![Payloads Added](images/03-payloads.JPG)
+![Execution Results](images/04-results.JPG)

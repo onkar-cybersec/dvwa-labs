@@ -22,3 +22,10 @@ User input is directly passed to system command without sanitization.
 - Input validation
 - Avoid system command execution
 - Use safe APIs
+
+## Screenshots
+
+![Normal Request](images/01-normal.JPG)
+![List Files (ls)](images/02-list.JPG)
+![Print Working Directory (pwd)](images/03-pwd.JPG)
+![Current User (whoami)](images/04-whoami.JPG)

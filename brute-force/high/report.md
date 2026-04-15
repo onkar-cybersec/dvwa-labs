@@ -26,3 +26,10 @@ Brute force attack becomes ineffective due to lack of clear response indicators.
 - Account lockout
 - CAPTCHA
 - Monitoring suspicious activity
+
+## Screenshots
+
+![Request Captured](images/01-request.JPG)
+![Injection Position Identified](images/02-positions.JPG)
+![Payloads Configured](images/03-payloads.JPG)
+![Execution Results](images/04-results.JPG)

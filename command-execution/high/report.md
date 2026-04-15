@@ -21,3 +21,8 @@ Strong input validation prevents command injection.
 ## Fix
 - Use allowlist validation (already implemented)
 - Avoid direct system command execution
+
+## Screenshots
+
+![Bypass Attempt](images/01-bypass.JPG)
+![Failed Result](images/02-failed.JPG)

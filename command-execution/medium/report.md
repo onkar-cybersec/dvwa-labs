@@ -25,6 +25,6 @@ Input filtering is incomplete and does not block all command separators.
 
 ## Screenshots
 
-![Failed](images/failed.jpg)
-![Bypass](images/bypass.jpg)
-![Execution](images/whoami.jpg)
+![Failed Attempt](images/01-failed.JPG)
+![Bypass Successful](images/02-bypass.JPG)
+![whoami Output](images/03-whoami.JPG)

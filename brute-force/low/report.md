@@ -27,3 +27,10 @@ No brute force protection implemented.
 - Add rate limiting
 - Account lockout
 - CAPTCHA
+
+## Screenshots
+
+![Request Captured](images/01-request.JPG)
+![Injection Point Identified](images/02-positions.JPG)
+![Payloads Added](images/03-payloads.JPG)
+![Execution Results](images/04-results.JPG)
