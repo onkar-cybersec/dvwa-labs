@@ -1,28 +1,25 @@
 # Command Injection Comparison (DVWA)
 
 ## Low
-
-* No input validation
-* Commands like `;`, `&&`, `|` work easily
-* Full command execution possible
-* Very easy to exploit
+- No input validation
+- Command injection successful
+- System commands executed directly
 
 ## Medium
-
-* Basic filtering applied
-* Some operators like `;` blocked
-* Bypass possible using alternative operators (e.g., `&`)
-* Vulnerability still exists due to incomplete filtering
+- Basic filtering implemented
+- Some payloads blocked
+- Injection still possible using alternative separators
 
 ## High
+- Strong input validation
+- Malicious input rejected
+- Injection attempts unsuccessful
 
-* Strong input validation (IP format enforced)
-* Only numeric values allowed
-* Command injection not possible
-* Proper mitigation implemented
+## Impossible
+- Strict allowlist validation
+- Each IP octet must be numeric
+- Anti-CSRF protection implemented
+- Command injection completely prevented
 
 ## Conclusion
-
-As security level increases, the application moves from no validation to strict allowlist validation.
-
-Low and Medium levels are vulnerable due to lack of proper input handling, while High level effectively prevents command injection through strict validation.
+As the security level increases, the application applies stronger input validation and security controls. Low and Medium levels remain vulnerable to command injection, while High significantly reduces the attack surface. The Impossible level effectively prevents command injection through strict IP validation and additional security mechanisms.
