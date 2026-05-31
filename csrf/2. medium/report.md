@@ -1,15 +1,16 @@
 # CSRF - Medium
 
 ## Step 1
-
 Captured the password change request using Burp Suite.
 
-## Step 2
+![Target Page](images/00-target-page.JPG)
 
-Sent the request to Repeater and confirmed the request works with a valid Referer header.
+## Step 2
+Verified that the request was accepted when using a valid Referer header.
+
+![Normal Request](images/01-normal-request.JPG)
 
 ## Step 3
-
 Modified the Referer header to:
 
 ```text
@@ -18,8 +19,9 @@ http://evil.com/csrf.html
 
 The request was rejected.
 
-## Step 4
+![Invalid Referer Failed](images/03-invalid-referer-failed.JPG)
 
+## Step 4
 Modified the Referer header to:
 
 ```text
@@ -28,28 +30,16 @@ http://evil.com/localhost/csrf.html
 
 The request was accepted and the password was changed successfully.
 
-## Result
+![Referer Bypass Success](images/04-referer-bypass-success.JPG)
 
+## Result
 Successfully bypassed the Medium-level CSRF protection.
 
 ## Reason
-
-The application only checks whether the server name appears anywhere inside the Referer header. This validation can be bypassed by including the hostname inside a malicious URL.
+The application only checks whether the server hostname appears anywhere in the Referer header. This validation can be bypassed by embedding the hostname inside a malicious URL.
 
 ## Fix
-
-* Implement CSRF tokens
-* Validate trusted origins correctly
-* Use SameSite cookies
-
-## Screenshots
-
-![Target Page](images/00-target-page.JPG)
-
-![Normal Request](images/01-normal-request.JPG)
-
-![Repeater Success](images/02-repeater-success.JPG)
-
-![Invalid Referer Failed](images/03-invalid-referer-failed.JPG)
-
-![Referer Bypass Success](images/04-referer-bypass-success.JPG)
+- Implement Anti-CSRF tokens.
+- Validate trusted origins correctly.
+- Use SameSite cookie attributes.
+- Avoid relying solely on Referer validation.

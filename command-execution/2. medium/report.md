@@ -1,29 +1,37 @@
 # Command Injection - Medium
 
 ## Step 1
-Tested payload: 127.0.0.1; ls
+Tested the following payload:
 
-## Step 2
-Observed that ";" and other operators were blocked.
-
-## Step 3
-Tried alternative payload: 127.0.0.1 & ls
-
-## Step 4
-Successfully executed system command using single "&" operator.
-
-## Result
-Command injection vulnerability still exists and can be bypassed.
-
-## Reason
-Input filtering is incomplete and does not block all command separators.
-
-## Fix
-- Strict input validation
-- Allowlist approach
-- Avoid direct system command execution
-
-## Screenshots
+```text
+127.0.0.1; ls
+```
 
 ![Normal Attempt](images/01-normal.JPG)
+
+## Step 2
+Observed that common command separators such as `;` were blocked by the application.
+
+## Step 3
+Attempted a bypass using the following payload:
+
+```text
+127.0.0.1 & ls
+```
+
 ![Bypass Successful](images/02-bypass.JPG)
+
+## Step 4
+The application executed the additional command, confirming that the filter could be bypassed.
+
+## Result
+Command injection remained possible despite the implemented filtering.
+
+## Reason
+The application uses incomplete blacklist filtering and fails to block all command separators.
+
+## Fix
+- Use strict allowlist validation.
+- Avoid blacklist-based filtering.
+- Avoid passing user input directly to system commands.
+- Use safer APIs whenever possible.

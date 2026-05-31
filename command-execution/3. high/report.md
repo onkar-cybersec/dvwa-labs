@@ -1,91 +1,43 @@
 # Command Injection - High
 
 ## Step 1
-
-Tested valid input and observed normal ping output.
-
-Input used:
+Entered a valid IP address and confirmed normal application behavior.
 
 ```text
 127.0.0.1
 ```
 
+![Normal Attempt](images/01-normal.JPG)
+
 ## Step 2
-
-Attempted basic command injection using semicolon payload.
-
-Payload used:
+Attempted a basic command injection payload.
 
 ```text
 127.0.0.1;whoami
 ```
+
+![Failed Payload](images/02-failed.JPG)
 
 ## Step 3
-
-The payload failed because the High security level removed the semicolon from the input.
-
-After filtering, the payload became invalid:
-
-```text
-127.0.0.1whoami
-```
-
-Possible observed error:
-
-```text
-ping: 127.0.0.1whoami: Name or service not known
-```
-
-In some cases, the page may show no output because the failed command does not return useful standard output.
+Observed that the application filtered the semicolon character, causing the payload to fail.
 
 ## Step 4
-
-Tested bypass payload using pipe operator without a space.
-
-Payload used:
+Used the following bypass payload:
 
 ```text
 127.0.0.1|whoami
 ```
+
+![Successful Bypass](images/03-bypass.JPG)
 
 ## Result
-
-Command injection was successful using the bypass payload.
+Successfully achieved command execution using a blacklist bypass technique.
 
 ## Reason
-
-The application blocks common command separators such as semicolon, but the blacklist does not properly block the pipe operator when used without a space.
-
-The failed payload was:
-
-```text
-127.0.0.1;whoami
-```
-
-The successful bypass payload was:
-
-```text
-127.0.0.1|whoami
-```
-
-## Impact
-
-An attacker may be able to execute operating system commands through the vulnerable input field.
+The application blocks common command separators such as semicolons but fails to properly filter the pipe operator, allowing command injection.
 
 ## Fix
-
-* Use strict allowlist validation for IP addresses
-* Avoid passing user input directly to system commands
-* Avoid using `shell_exec()` with untrusted input
-* Use safer built-in functions where possible
-* Run the web server with low privileges
-
-## Conclusion
-
-DVWA Command Injection High blocks basic payloads, but command injection is still possible using a blacklist bypass.
-
-## Screenshots
-
-![Normal Attempt](images/01-normal.JPG)
-![Failed Payload](images/02-failed.JPG)
-![Successful Bypass](images/03-bypass.JPG)
+- Implement strict allowlist validation for IP addresses.
+- Avoid using shell commands with user-controlled input.
+- Replace blacklist filtering with positive validation.
+- Run services with minimal privileges.
