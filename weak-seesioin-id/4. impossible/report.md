@@ -1,0 +1,46 @@
+# Weak Session IDs - Impossible
+
+## Step 1
+
+* Opened Weak Session IDs page.
+* Security level set to Impossible.
+
+**Screenshot:** `01_target_page.jpg`
+
+## Step 2
+
+* Generated a session ID.
+* Observed a SHA1-based session value.
+
+**Screenshot:** `02_secure_session_id.jpg`
+
+## Step 3
+
+* Generated another session ID.
+* Observed a completely different SHA1 value.
+* No predictable relationship was identified between the values.
+
+**Screenshot:** `03_unpredictable_session_id.jpg`
+
+## Result
+
+* Session IDs were not predictable.
+* Generated values appeared random and resistant to guessing.
+
+## Reason
+
+* Session IDs are generated using:
+
+```php
+sha1(mt_rand() . time() . "Impossible")
+```
+
+* Random data is included in the generation process.
+* Secure and HttpOnly cookie flags are enabled.
+
+## Fix
+
+* Already properly mitigated.
+* Continue using cryptographically secure random session identifiers.
+* Keep Secure and HttpOnly cookie attributes enabled.
+* Use framework-managed session handling.
