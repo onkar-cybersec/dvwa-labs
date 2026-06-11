@@ -6,7 +6,7 @@
 
 * Navigated to **DVWA → Open HTTP Redirect** with security level set to **Medium**.
 
-![01_target_page](images/01_target_page.JPG)
+![01_target_page](images/01_target_page.__temp__.JPG)
 
 ### 2. Intercept and Modify the Request
 
@@ -24,7 +24,7 @@ https://
 GET /DVWA/vulnerabilities/open_redirect/source/medium.php?redirect=//google.com HTTP/1.1
 ```
 
-![02_burp_protocol_relative_redirect](images/02_burp_protocol_relative_redirect.JPG)
+![02_burp_protocol_relative_redirect](images/02_burp_protocol_relative_redirect.__temp__.JPG)
 
 ## Result
 

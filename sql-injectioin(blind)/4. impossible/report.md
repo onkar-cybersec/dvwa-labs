@@ -5,7 +5,7 @@
 * Opened SQL Injection (Blind) page.
 * Security level set to Impossible.
 
-![01_Target_Page](images/01_Target_Page.JPG)
+![01_Target_Page](images/01_Target_Page.__temp__.JPG)
 
 ## Step 2
 
@@ -19,7 +19,7 @@
 
 * Application returned a positive response.
 
-![02_valid_user](images/02_valid_user.JPG)
+![02_valid_user](images/02_valid_user.__temp__.JPG)
 
 ## Step 3
 
@@ -34,7 +34,7 @@
 * Injection attempt failed.
 * Application returned a negative response.
 
-![03_injection_failed](images/03_injection_failed.JPG)
+![03_injection_failed](images/03_injection_failed.__temp__.JPG)
 
 ## Result
 

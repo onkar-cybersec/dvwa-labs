@@ -15,7 +15,7 @@
 * Submitted the request.
 * The application returned the corresponding user information.
 
-![02_Normal_Query_High](images/02_Normal_Query_High.JPG)
+![02_Normal_Query_High](images/02_Normal_Query_High.__temp__.JPG)
 
 ---
 
@@ -33,7 +33,7 @@
 
 * The application returned user information, confirming successful SQL Injection through the session-based parameter.
 
-![03_SQLi_Test_High](images/03_SQLi_Test_High.JPG)
+![03_SQLi_Test_High](images/03_SQLi_Test_High.__temp__.JPG)
 
 ---
 

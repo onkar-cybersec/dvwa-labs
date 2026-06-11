@@ -4,13 +4,13 @@
 
 Opened the Insecure CAPTCHA page with security level set to Impossible.
 
-![Target Page](images/01-target-page.JPG)
+![Target Page](images/01-target-page.__temp__.JPG)
 
 ## Step 2
 
 Entered the correct current password, completed the CAPTCHA challenge, and successfully changed the password.
 
-![Password Changed](images/02-password-changed.JPG)
+![Password Changed](images/02-password-changed.__temp__.JPG)
 
 ## Result
 

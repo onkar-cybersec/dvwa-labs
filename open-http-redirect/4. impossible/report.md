@@ -6,7 +6,7 @@
 
 * Navigated to **DVWA → Open HTTP Redirect** with security level set to **Impossible**.
 
-![01_target_page](images/01_target_page.JPG)
+![01_target_page](images/01_target_page.__temp__.JPG)
 
 ### 2. Attempt External Redirect Injection
 
@@ -19,7 +19,7 @@ GET /DVWA/vulnerabilities/open_redirect/source/impossible.php?redirect=https://g
 
 * Sent the request to the application.
 
-![02_external_redirect_blocked](images/02_external_redirect_blocked.JPG)
+![02_external_redirect_blocked](images/02_external_redirect_blocked.__temp__.JPG)
 
 ## Result
 

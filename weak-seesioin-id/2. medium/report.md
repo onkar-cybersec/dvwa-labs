@@ -5,7 +5,7 @@
 * Opened Weak Session IDs page.
 * Security level set to Medium.
 
-![01_target_page](images/01_target_page.JPG)
+![01_target_page](images/01_target_page.__temp__.JPG)
 
 ## Step 2
 
@@ -18,7 +18,7 @@
 dvwaSession=1780396107
 ```
 
-![02_timestamp_session_id_1](images/02_timestamp_session_id_1.JPG)
+![02_timestamp_session_id_1](images/02_timestamp_session_id_1.__temp__.JPG)
 
 ## Step 3
 
@@ -31,7 +31,7 @@ dvwaSession=1780396107
 dvwaSession=1780396199
 ```
 
-![03_timestamp_session_id_2](images/03_timestamp_session_id_2.JPG)
+![03_timestamp_session_id_2](images/03_timestamp_session_id_2.__temp__.JPG)
 
 ## Step 4
 
@@ -43,7 +43,7 @@ dvwaSession=1780396199
 dvwaSession=1780396276
 ```
 
-![04_predicted_timestamp_session_id](images/04_predicted_timestamp_session_id.JPG)
+![04_predicted_timestamp_session_id](images/04_predicted_timestamp_session_id.__temp__.JPG)
 
 ## Result
 

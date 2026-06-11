@@ -7,7 +7,7 @@
 * Set DVWA Security Level to **Impossible**.
 * Navigate to **API Security**.
 
-![01_target_page](images/01_target_page.JPG)
+![01_target_page](images/01_target_page.__temp__.JPG)
 
 ---
 

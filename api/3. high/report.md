@@ -7,7 +7,7 @@
 * Set DVWA Security Level to **High**.
 * Navigate to **API Security**.
 
-![01_target_page](images/01_target_page.JPG)
+![01_target_page](images/01_target_page.__temp__.JPG)
 
 ---
 
@@ -42,7 +42,7 @@ ping -c 4 127.0.0.1; false
 
 * The injected command modifies the return status of the executed command.
 
-![02_command_injection](images/02_command_injection.JPG)
+![02_command_injection](images/02_command_injection.__temp__.JPG)
 
 ---
 

@@ -3,7 +3,7 @@
 ## Step 1
 Open the DVWA File Inclusion page and set the security level to High.
 
-![Target Page](images/01-target-page.JPG)
+![Target Page](images/01-target-page.__temp__.JPG)
 
 ## Step 2
 Verify that the application loads an approved file normally.
@@ -12,7 +12,7 @@ Verify that the application loads an approved file normally.
 ?page=file1.php
 ```
 
-![Normal File Load](images/02-normal-file1.JPG)
+![Normal File Load](images/02-normal-file1.__temp__.JPG)
 
 ## Step 3
 Test a file wrapper payload.
@@ -21,12 +21,12 @@ Test a file wrapper payload.
 ?page=file:///etc/passwd
 ```
 
-![File Wrapper Payload](images/03-file-wrapper-payload.JPG)
+![File Wrapper Payload](images/03-file-wrapper-payload.__temp__.JPG)
 
 ## Step 4
 Observe that the contents of `/etc/passwd` are displayed.
 
-![LFI Success](images/04-lfi-success-passwd.JPG)
+![LFI Success](images/04-lfi-success-passwd.__temp__.JPG)
 
 ## Result
 Successfully exploited a Local File Inclusion vulnerability using a file wrapper payload.

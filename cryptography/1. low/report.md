@@ -7,7 +7,7 @@
 * Navigated to **DVWA → Cryptography Problems** with security level set to **Low**.
 * Observed the intercepted encrypted message.
 
-![01_target_page](images/01_target_page.JPG)
+![01_target_page](images/01_target_page.__temp__.JPG)
 
 ### 2. Decode the Intercepted Message
 
@@ -26,7 +26,7 @@ The application revealed:
 Your new password is: Olifant
 ```
 
-![02_decoded_password](images/02_decoded_password.JPG)
+![02_decoded_password](images/02_decoded_password.__temp__.JPG)
 
 ### 3. Authenticate with the Recovered Password
 
@@ -38,7 +38,7 @@ Olifant
 
 * Logged into the application successfully.
 
-![03_successful_login](images/03_successful_login.JPG)
+![03_successful_login](images/03_successful_login.__temp__.JPG)
 
 ## Result
 

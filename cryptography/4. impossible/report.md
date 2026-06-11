@@ -7,7 +7,7 @@
 * Navigated to **DVWA → Cryptography Problems** with security level set to **Impossible**.
 * Obtained a valid encrypted token and IV.
 
-![01_target_page](images/01_target_page.JPG)
+![01_target_page](images/01_target_page.__temp__.JPG)
 
 ### 2. Attempt Token Tampering
 
@@ -16,7 +16,7 @@
 * Modified a single character in the IV value while keeping the token unchanged.
 * Resubmitted the altered request.
 
-![02_token_tampering_blocked](images/02_token_tampering_blocked.JPG)
+![02_token_tampering_blocked](images/02_token_tampering_blocked.__temp__.JPG)
 
 ## Result
 

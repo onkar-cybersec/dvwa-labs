@@ -5,7 +5,7 @@
 * Opened SQL Injection (Blind) page.
 * Security level set to Medium.
 
-![01_Target_Page](images/01_Target_Page.JPG)
+![01_Target_Page](images/01_Target_Page.__temp__.JPG)
 
 ## Step 2
 
@@ -19,7 +19,7 @@
 
 * User exists.
 
-![02_valid_user](images/02_valid_user.JPG)
+![02_valid_user](images/02_valid_user.__temp__.JPG)
 
 ## Step 3
 
@@ -33,7 +33,7 @@
 
 * Application returned a positive response.
 
-![03_burp_true_condition](images/03_burp_true_condition.JPG)
+![03_burp_true_condition](images/03_burp_true_condition.__temp__.JPG)
 
 ## Step 4
 
@@ -47,7 +47,7 @@
 
 * Application returned a negative response.
 
-![04_burp_false_condition](images/04_burp_false_condition.JPG)
+![04_burp_false_condition](images/04_burp_false_condition.__temp__.JPG)
 
 ## Result
 

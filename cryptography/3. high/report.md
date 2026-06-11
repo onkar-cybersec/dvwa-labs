@@ -7,7 +7,7 @@
 * Navigated to **DVWA → Cryptography Problems** with security level set to **High**.
 * Obtained a user token and IV.
 
-![01_target_page](images/01_target_page.JPG)
+![01_target_page](images/01_target_page.__temp__.JPG)
 
 ### 2. Intercept the Token Validation Request
 
@@ -40,7 +40,7 @@ POST /DVWA/vulnerabilities/cryptography/source/check_token_high.php
 
 * Forwarded the modified request.
 
-![02_cbc_iv_bit_flipping_admin](images/02_cbc_iv_bit_flipping_admin.JPG)
+![02_cbc_iv_bit_flipping_admin](images/02_cbc_iv_bit_flipping_admin.__temp__.JPG)
 
 ## Result
 

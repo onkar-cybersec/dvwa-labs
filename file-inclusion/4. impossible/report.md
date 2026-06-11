@@ -3,7 +3,7 @@
 ## Step 1
 Open the DVWA File Inclusion page and set the security level to Impossible.
 
-![Target Page](images/01-target-page.JPG)
+![Target Page](images/01-target-page.__temp__.JPG)
 
 ## Step 2
 Verify that an approved file loads correctly.
@@ -12,7 +12,7 @@ Verify that an approved file loads correctly.
 ?page=file1.php
 ```
 
-![Normal File Load](images/02-normal-file1.JPG)
+![Normal File Load](images/02-normal-file1.__temp__.JPG)
 
 ## Step 3
 Attempt Local File Inclusion using a file wrapper payload.
@@ -23,7 +23,7 @@ Attempt Local File Inclusion using a file wrapper payload.
 
 The application rejects the request.
 
-![File Wrapper Blocked](images/03-file-wrapper-blocked.JPG)
+![File Wrapper Blocked](images/03-file-wrapper-blocked.__temp__.JPG)
 
 ## Step 4
 Attempt Local File Inclusion using directory traversal.
@@ -34,7 +34,7 @@ Attempt Local File Inclusion using directory traversal.
 
 The application rejects the request.
 
-![Traversal Blocked](images/04-traversal-blocked.JPG)
+![Traversal Blocked](images/04-traversal-blocked.__temp__.JPG)
 
 ## Result
 The File Inclusion vulnerability could not be exploited. All unauthorized file access attempts were blocked.

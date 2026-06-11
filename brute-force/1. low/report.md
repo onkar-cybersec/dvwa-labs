@@ -3,12 +3,12 @@
 ## Step 1
 Captured the login request from the DVWA Brute Force page using Burp Suite.
 
-![Request Captured](images/01-request.JPG)
+![Request Captured](images/01-request.__temp__.JPG)
 
 ## Step 2
 Sent the request to Burp Intruder and selected the password parameter as the attack position.
 
-![Injection Point Identified](images/02-positions.JPG)
+![Injection Point Identified](images/02-positions.__temp__.JPG)
 
 ## Step 3
 Loaded a common password wordlist containing values such as:
@@ -16,12 +16,12 @@ Loaded a common password wordlist containing values such as:
 - password
 - 123456
 
-![Payloads Added](images/03-payloads.JPG)
+![Payloads Added](images/03-payloads.__temp__.JPG)
 
 ## Step 4
 Executed the attack and monitored response lengths to identify anomalies.
 
-![Execution Results](images/04-results.JPG)
+![Execution Results](images/04-results.__temp__.JPG)
 
 ## Result
 Successfully identified valid credentials:

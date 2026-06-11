@@ -7,7 +7,7 @@
 * Navigated to **DVWA → Open HTTP Redirect** with security level set to **High**.
 * Observed the available quote links.
 
-![01_target_page](images/01_target_page.JPG)
+![01_target_page](images/01_target_page.__temp__.JPG)
 
 ### 2. Analyze the Redirect Request
 
@@ -30,7 +30,7 @@ GET /DVWA/vulnerabilities/open_redirect/source/high.php?redirect=https://google.
 
 * Sent the request using Burp Suite.
 
-![02_burp_info_php_bypass](images/02_burp_info_php_bypass.JPG)
+![02_burp_info_php_bypass](images/02_burp_info_php_bypass.__temp__.JPG)
 
 ## Result
 

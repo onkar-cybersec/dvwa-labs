@@ -7,7 +7,7 @@
 * Navigated to **DVWA → Open HTTP Redirect** with security level set to **Low**.
 * Observed the available redirect links.
 
-![01_target_page](images/01_target_page.JPG)
+![01_target_page](images/01_target_page.__temp__.JPG)
 
 ### 2. Intercept and Modify the Redirect Request
 
@@ -20,7 +20,7 @@ GET /DVWA/vulnerabilities/open_redirect/source/low.php?redirect=https://google.c
 
 * Sent the request to the server.
 
-![02_burp_request](images/02_burp_request.JPG)
+![02_burp_request](images/02_burp_request.__temp__.JPG)
 
 ## Result
 

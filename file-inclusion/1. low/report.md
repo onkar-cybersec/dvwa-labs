@@ -3,7 +3,7 @@
 ## Step 1
 Open the DVWA File Inclusion page and set the security level to Low.
 
-![Target Page](images/01-target-page.JPG)
+![Target Page](images/01-target-page.__temp__.JPG)
 
 ## Step 2
 Load the default page using the following parameter:
@@ -12,7 +12,7 @@ Load the default page using the following parameter:
 ?page=include.php
 ```
 
-![Normal Include](images/02-normal-include.JPG)
+![Normal Include](images/02-normal-include.__temp__.JPG)
 
 ## Step 3
 Modify the `page` parameter to perform Local File Inclusion.
@@ -21,12 +21,12 @@ Modify the `page` parameter to perform Local File Inclusion.
 ?page=../../../../../../etc/passwd
 ```
 
-![LFI Payload URL](images/03-lfi-payload-url.JPG)
+![LFI Payload URL](images/03-lfi-payload-url.__temp__.JPG)
 
 ## Step 4
 Observe that the contents of `/etc/passwd` are displayed in the browser.
 
-![LFI Success](images/04-lfi-success-passwd.JPG)
+![LFI Success](images/04-lfi-success-passwd.__temp__.JPG)
 
 ## Result
 Successfully accessed the contents of `/etc/passwd`, confirming a Local File Inclusion vulnerability.

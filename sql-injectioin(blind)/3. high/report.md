@@ -5,13 +5,13 @@
 * Opened SQL Injection (Blind) page.
 * Security level set to High.
 
-![01_Target_Page](images/01_Target_Page.JPG)
+![01_Target_Page](images/01_Target_Page.__temp__.JPG)
 
 ## Step 2
 
 * Verified a valid user ID through the cookie mechanism.
 
-![02_valid_user](images/02_valid_user.JPG)
+![02_valid_user](images/02_valid_user.__temp__.JPG)
 
 ## Step 3
 
@@ -25,7 +25,7 @@
 
 * Application returned a positive response.
 
-![03_cookie_true](images/03_cookie_true.JPG)
+![03_cookie_true](images/03_cookie_true.__temp__.JPG)
 
 ## Step 4
 
@@ -39,7 +39,7 @@
 
 * Application returned a negative response.
 
-![04_cookie_false](images/04_cookie_false.JPG)
+![04_cookie_false](images/04_cookie_false.__temp__.JPG)
 
 ## Result
 

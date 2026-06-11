@@ -6,7 +6,7 @@
 * Security level set to Impossible.
 * Reviewed the page and source code.
 
-![01_impossible_page](images/01_impossible_page.JPG)
+![01_impossible_page](images/01_impossible_page.__temp__.JPG)
 
 ## Result
 
