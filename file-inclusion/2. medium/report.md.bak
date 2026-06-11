@@ -3,7 +3,7 @@
 ## Step 1
 Open the DVWA File Inclusion page and set the security level to Medium.
 
-![Target Page](images/01-target-page.JPG)
+![Target Page](images/01-target-page.png)
 
 ## Step 2
 Verify that the application loads the default page correctly.
@@ -12,7 +12,7 @@ Verify that the application loads the default page correctly.
 ?page=include.php
 ```
 
-![Normal Include](images/02-normal-include.JPG)
+![Normal Include](images/02-normal-include.png)
 
 ## Step 3
 Use a directory traversal bypass payload.
@@ -21,12 +21,12 @@ Use a directory traversal bypass payload.
 ?page=....//....//....//....//....//....//etc/passwd
 ```
 
-![LFI Payload URL](images/03-lfi-payload-url.JPG)
+![LFI Payload URL](images/03-lfi-payload-url.png)
 
 ## Step 4
 Observe that the contents of `/etc/passwd` are displayed.
 
-![LFI Success](images/04-lfi-success-passwd.JPG)
+![LFI Success](images/04-lfi-success-passwd.png)
 
 ## Result
 Successfully bypassed the application's filter and accessed a local system file.

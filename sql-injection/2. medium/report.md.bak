@@ -25,7 +25,7 @@
 * Submitted the SQL Injection request.
 * Captured the HTTP POST request containing the user-supplied parameter.
 
-![03_Burp_Intercept_Medium](images/03_Burp_Intercept_Medium.JPG)
+![03_Burp_Intercept_Medium](images/03_Burp_Intercept_Medium.jpg)
 
 ---
 
@@ -59,7 +59,7 @@
 
 * Confirmed that both columns are reflected and can be used for data extraction.
 
-![05_Union_Select_Test_Medium](images/05_Union_Select_Test_Medium.JPG)
+![05_Union_Select_Test_Medium](images/05_Union_Select_Test_Medium.jpg)
 
 ---
 

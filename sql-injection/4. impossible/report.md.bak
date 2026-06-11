@@ -31,7 +31,7 @@
 
 * The application rejected the malicious input and no SQL Injection occurred.
 
-![03_SQLi_Attempt_Impossible](images/03_SQLi_Attempt_Impossible.JPG)
+![03_SQLi_Attempt_Impossible](images/03_SQLi_Attempt_Impossible.jpg)
 
 ---
 

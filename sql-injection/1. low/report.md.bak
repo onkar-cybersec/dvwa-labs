@@ -5,7 +5,7 @@
 * Navigated to the SQL Injection module in DVWA.
 * Verified that the Security Level was set to Low.
 
-![01_Target_Page](images/01_Target_Page.JPG)
+![01_Target_Page](images/01_Target_Page.jpg)
 
 ---
 
@@ -15,7 +15,7 @@
 * Submitted the request.
 * The application returned the corresponding user information.
 
-![02_Normal_Query](images/02_Normal_Query.JPG)
+![02_Normal_Query](images/02_Normal_Query.jpg)
 
 ---
 
