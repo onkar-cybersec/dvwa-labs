@@ -4,8 +4,10 @@ Fix image links in DVWA lab Markdown files for GitHub.
 
 The script recursively scans report.md, comparison-report.md, and README.md
 files. It fixes old screenshot references and existing Markdown image links so
-they point to the local images/ folder using the exact filename case that exists
-on disk. Fenced code blocks and external URLs are left unchanged.
+they point to the local images/ folder. Before fixing Markdown, it renames
+lowercase .jpg files in every images/ folder to uppercase .JPG so links and
+files use the same GitHub-safe extension case. Fenced code blocks and external
+URLs are left unchanged.
 """
 
 from __future__ import annotations
@@ -53,6 +55,7 @@ class ChangeLog:
     fixed_paths: set[str] = field(default_factory=set)
     corrected_filenames: set[tuple[str, str]] = field(default_factory=set)
     corrected_folders: set[tuple[str, str]] = field(default_factory=set)
+    renamed_images: set[tuple[str, str]] = field(default_factory=set)
 
 
 def parse_args() -> argparse.Namespace:
@@ -92,6 +95,36 @@ def find_markdown_files(root: Path) -> list[Path]:
     return sorted(files)
 
 
+def find_images_dirs(root: Path) -> list[Path]:
+    dirs: list[Path] = []
+    for path in root.rglob("*"):
+        if path.is_dir() and path.name.lower() == "images" and not is_ignored(path, root):
+            dirs.append(path)
+    return sorted(dirs)
+
+
+def rename_lowercase_jpg_files(root: Path, dry_run: bool, log: ChangeLog) -> None:
+    """Rename every images/*.jpg file to images/*.JPG across the repository."""
+    for images_dir in find_images_dirs(root):
+        for image in sorted(images_dir.iterdir()):
+            if not image.is_file() or image.suffix != ".jpg":
+                continue
+
+            target = image.with_suffix(".JPG")
+            old_display = display_path(image, root)
+            new_display = display_path(target, root)
+            log.renamed_images.add((old_display, new_display))
+
+            if dry_run:
+                continue
+
+            # Windows treats .jpg and .JPG as the same path, so use a temporary
+            # filename to force a case-only rename to be persisted.
+            temp = image.with_name(f"{image.stem}.tmp-renaming{image.suffix}")
+            image.rename(temp)
+            temp.rename(target)
+
+
 def read_text(path: Path) -> str:
     try:
         return path.read_text(encoding="utf-8")
@@ -115,12 +148,11 @@ def load_local_images(markdown_file: Path) -> dict[str, str]:
 
 def clean_markdown_target(target: str) -> tuple[str, str]:
     """Split a Markdown link target into path and optional #anchor/?query suffix."""
-    suffix = ""
     for marker in ("#", "?"):
         if marker in target:
             path_part, rest = target.split(marker, 1)
             return path_part, marker + rest
-    return target, suffix
+    return target, ""
 
 
 def is_external_target(target: str) -> bool:
@@ -161,7 +193,6 @@ def fix_markdown_image_link(
         return match.group(0)
 
     fixed_target = f"images/{actual_name}{suffix}"
-    old_target = match.group("target")
 
     if requested_path.name != actual_name:
         log.corrected_filenames.add((requested_path.name, actual_name))
@@ -291,6 +322,10 @@ def run_git_add(root: Path) -> int:
 
 
 def print_summary(log: ChangeLog, missing_all: set[str], dry_run: bool) -> None:
+    image_label = "Would rename image" if dry_run else "Renamed image"
+    for old_path, new_path in sorted(log.renamed_images):
+        print(f"{image_label}: {old_path} -> {new_path}")
+
     path_label = "Would fix path" if dry_run else "Fixed path"
     for path in sorted(log.fixed_paths):
         print(f"{path_label}: {path}")
@@ -318,6 +353,8 @@ def main() -> int:
     root = repo_root()
     log = ChangeLog()
     missing_all: set[str] = set()
+
+    rename_lowercase_jpg_files(root, args.dry_run, log)
 
     for markdown_file in find_markdown_files(root):
         changed, saw_image_link, missing = process_markdown_file(
