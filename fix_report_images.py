@@ -4,9 +4,9 @@ Convert screenshot references in DVWA lab reports to GitHub image links.
 
 The script scans for report.md and comparison-report.md files, looks for lines
 such as "**Screenshot:** `01_target_page.jpg`", and rewrites them to Markdown
-image syntax. It also normalizes supported image filenames in images/ folders
-to use a .JPG extension and updates existing Markdown image links to match.
-Fenced code blocks are left alone.
+image syntax. It also normalizes supported screenshot/image filenames to use a
+.JPG extension and updates existing Markdown image links to match. Fenced code
+blocks are left alone.
 """
 
 from __future__ import annotations
@@ -39,9 +39,9 @@ SCREENSHOT_RE = re.compile(
 )
 
 FENCE_RE = re.compile(r"^\s*(```|~~~)")
-IMAGE_LINK_RE = re.compile(
-    r"(?P<prefix>!\[[^\]]*\]\(images/)"
-    r"(?P<filename>[^)]+\.(?:jpe?g|png|gif|webp))"
+MARKDOWN_IMAGE_RE = re.compile(
+    r"(?P<prefix>!\[[^\]]*\]\()"
+    r"(?P<filepath>[^)\s]+\.(?:jpe?g|png|gif|webp))"
     r"(?P<suffix>\))",
     re.IGNORECASE,
 )
@@ -92,14 +92,14 @@ def normalized_name(filename: str) -> str:
     return f"{Path(filename).stem}{NORMALIZED_EXTENSION}"
 
 
-def normalize_images(images_dir: Path, root: Path, dry_run: bool) -> set[str]:
-    """Rename supported image files in an images/ folder to use .JPG."""
-    if not images_dir.is_dir():
+def normalize_image_files(directory: Path, root: Path, dry_run: bool) -> set[str]:
+    """Rename supported image files in a directory to use .JPG."""
+    if not directory.is_dir():
         return set()
 
     images = [
         image
-        for image in images_dir.iterdir()
+        for image in directory.iterdir()
         if image.is_file() and image.suffix.lower() in SUPPORTED_EXTENSIONS
     ]
     target_groups: dict[str, list[Path]] = {}
@@ -163,6 +163,49 @@ def load_images(images_dir: Path, collisions: set[str]) -> dict[str, str]:
     return images
 
 
+def find_image_dirs(root: Path, reports: list[Path]) -> list[Path]:
+    """Find image directories next to reports and any referenced by Markdown links."""
+    ignored_dirs = {".git", ".agents", ".codex", "__pycache__"}
+    directories: set[Path] = set()
+
+    for report in reports:
+        directories.add(report.parent / "images")
+        directories.add(report.parent / "screenshots")
+
+        try:
+            content = report.read_text(encoding="utf-8")
+        except UnicodeDecodeError:
+            content = report.read_text(encoding="utf-8-sig")
+
+        in_code_block = False
+        for raw_line in content.splitlines():
+            if FENCE_RE.match(raw_line):
+                in_code_block = not in_code_block
+                continue
+            if in_code_block:
+                continue
+
+            for match in MARKDOWN_IMAGE_RE.finditer(raw_line):
+                file_path = Path(match.group("filepath"))
+                if file_path.is_absolute() or ".." in file_path.parts:
+                    continue
+                directories.add(report.parent / file_path.parent)
+
+    return sorted(
+        directory
+        for directory in directories
+        if directory.is_dir()
+        and not any(part in ignored_dirs for part in directory.relative_to(root).parts)
+    )
+
+
+def load_image_map(root: Path, image_collisions: dict[Path, set[str]]) -> dict[Path, dict[str, str]]:
+    return {
+        image_dir: load_images(image_dir, collisions)
+        for image_dir, collisions in image_collisions.items()
+    }
+
+
 def replacement_for(
     line: str,
     images: dict[str, str],
@@ -187,7 +230,11 @@ def replacement_for(
     return f"{match.group('indent')}![{alt_text}](images/{actual_name})"
 
 
-def fix_image_links(line: str, images: dict[str, str]) -> tuple[str, bool, bool]:
+def fix_image_links(
+    line: str,
+    report_dir: Path,
+    image_maps: dict[Path, dict[str, str]],
+) -> tuple[str, bool, bool]:
     """Normalize already-existing Markdown image links outside code blocks."""
     changed = False
     found_link = False
@@ -195,20 +242,31 @@ def fix_image_links(line: str, images: dict[str, str]) -> tuple[str, bool, bool]
     def replace(match: re.Match[str]) -> str:
         nonlocal changed, found_link
         found_link = True
-        requested_name = match.group("filename")
-        actual_name = images.get(requested_name.lower(), normalized_name(requested_name))
-        replacement = f"{match.group('prefix')}{actual_name}{match.group('suffix')}"
+        requested_path = Path(match.group("filepath"))
+
+        if requested_path.is_absolute() or ".." in requested_path.parts:
+            return match.group(0)
+
+        image_dir = report_dir / requested_path.parent
+        images = image_maps.get(image_dir, {})
+        actual_name = images.get(
+            requested_path.name.lower(), normalized_name(requested_path.name)
+        )
+        fixed_path = (requested_path.parent / actual_name).as_posix()
+        replacement = f"{match.group('prefix')}{fixed_path}{match.group('suffix')}"
         if replacement != match.group(0):
             changed = True
         return replacement
 
-    return IMAGE_LINK_RE.sub(replace, line), changed, found_link
+    return MARKDOWN_IMAGE_RE.sub(replace, line), changed, found_link
 
 
 def fix_content(
     content: str,
     images: dict[str, str],
     images_dir: Path,
+    report_dir: Path,
+    image_maps: dict[Path, dict[str, str]],
     root: Path,
     missing: set[str],
 ) -> tuple[str, bool, bool]:
@@ -231,7 +289,9 @@ def fix_content(
             output.append(raw_line)
             continue
 
-        fixed_link_line, link_changed, found_link = fix_image_links(line_body, images)
+        fixed_link_line, link_changed, found_link = fix_image_links(
+            line_body, report_dir, image_maps
+        )
         if found_link:
             already_correct = True
             changed = changed or link_changed
@@ -251,15 +311,15 @@ def process_report(
     path: Path,
     root: Path,
     dry_run: bool,
-    image_collisions: dict[Path, set[str]],
+    image_maps: dict[Path, dict[str, str]],
 ) -> tuple[bool, bool, set[str]]:
     images_dir = path.parent / "images"
-    images = load_images(images_dir, image_collisions.get(images_dir, set()))
+    images = image_maps.get(images_dir, {})
     missing: set[str] = set()
 
     content = path.read_text(encoding="utf-8")
     fixed_content, changed, already_correct = fix_content(
-        content, images, images_dir, root, missing
+        content, images, images_dir, path.parent, image_maps, root, missing
     )
 
     if changed and not dry_run:
@@ -295,12 +355,14 @@ def main() -> int:
     reports = find_reports(root)
     image_collisions: dict[Path, set[str]] = {}
 
-    for images_dir in sorted({report.parent / "images" for report in reports}):
-        image_collisions[images_dir] = normalize_images(images_dir, root, args.dry_run)
+    for image_dir in find_image_dirs(root, reports):
+        image_collisions[image_dir] = normalize_image_files(image_dir, root, args.dry_run)
+
+    image_maps = load_image_map(root, image_collisions)
 
     for report in reports:
         changed, already_correct, missing = process_report(
-            report, root, args.dry_run, image_collisions
+            report, root, args.dry_run, image_maps
         )
         report_display = display_path(report, root)
 
