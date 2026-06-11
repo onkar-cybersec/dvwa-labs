@@ -5,7 +5,7 @@
 * Opened Weak Session IDs page.
 * Security level set to Low.
 
-![01_target_page](images/01_target_page.JPG)
+**Screenshot:** `01_target_page.jpg`
 
 ## Step 2
 
@@ -18,7 +18,7 @@
 dvwaSession=1
 ```
 
-![02_session_id_1](images/02_session_id_1.jpg)
+**Screenshot:** `02_session_id_1.jpg`
 
 ## Step 3
 
@@ -31,7 +31,7 @@ dvwaSession=1
 dvwaSession=2
 ```
 
-![03_session_id_2](images/03_session_id_2.JPG)
+**Screenshot:** `03_session_id_2.jpg`
 
 ## Step 4
 
@@ -44,7 +44,7 @@ dvwaSession=2
 dvwaSession=3
 ```
 
-![04_session_id_3](images/04_session_id_3.JPG)
+**Screenshot:** `04_session_id_3.jpg`
 
 ## Step 5
 

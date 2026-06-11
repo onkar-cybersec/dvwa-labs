@@ -6,7 +6,7 @@
 - Set DVWA Security Level to **Low**.
 - Navigate to **API Security**.
 
-![01_target_page](images/01_target_page.JPG)
+**Screenshot:** `01_target_page.jpg`
 
 ---
 
@@ -17,7 +17,7 @@
   ```
 - Observe that only user information is returned.
 
-![02_v2_normal_api](images/02_v2_normal_api.JPG)
+**Screenshot:** `02_v2_normal_api.jpg`
 
 ---
 
@@ -33,7 +33,7 @@
   ```
 - Send the modified request.
 
-![03_burp_v1_exposed_data](images/03_burp_v1_exposed_data.JPG)
+**Screenshot:** `03_burp_v1_exposed_data.jpg`
 
 ---
 

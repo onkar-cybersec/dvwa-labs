@@ -5,7 +5,7 @@
 * Opened JavaScript Attacks page.
 * Security level set to Medium.
 
-![01_target_page](images/01_target_page.JPG)
+**Screenshot:** `01_target_page.JPG`
 
 ## Step 2
 
@@ -19,7 +19,7 @@ phrase=success
 token=<generated_value>
 ```
 
-![02_burp_request](images/02_burp_request.JPG)
+**Screenshot:** `02_burp_request.JPG`
 
 ## Step 3
 
@@ -47,7 +47,7 @@ XXsseccusXX
 * Modified the token in Burp Repeater.
 * Submitted the request successfully.
 
-![03_successful_bypass](images/03_successful_bypass.JPG)
+**Screenshot:** `03_successful_bypass.JPG`
 
 ## Result
 
