@@ -5,14 +5,14 @@
 * Opened Weak Session IDs page.
 * Security level set to Impossible.
 
-![01_target_page](images/01_target_page.__temp__.JPG)
+![01_target_page](images/01_target_page.JPG)
 
 ## Step 2
 
 * Generated a session ID.
 * Observed a SHA1-based session value.
 
-![02_secure_session_id](images/02_secure_session_id.__temp__.JPG)
+![02_secure_session_id](images/02_secure_session_id.JPG)
 
 ## Step 3
 
@@ -20,7 +20,7 @@
 * Observed a completely different SHA1 value.
 * No predictable relationship was identified between the values.
 
-![03_unpredictable_session_id](images/03_unpredictable_session_id.__temp__.JPG)
+![03_unpredictable_session_id](images/03_unpredictable_session_id.JPG)
 
 ## Result
 

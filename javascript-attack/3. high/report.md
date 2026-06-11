@@ -5,7 +5,7 @@
 * Opened JavaScript Attacks page.
 * Security level set to High.
 
-![01_target_page](images/01_target_page.__temp__.JPG)
+![01_target_page](images/01_target_page.JPG)
 
 ## Step 2
 
@@ -13,7 +13,7 @@
 * Captured the request in Burp Suite.
 * Observed the generated token and request parameters.
 
-![02_burp_request](images/02_burp_request.__temp__.JPG)
+![02_burp_request](images/02_burp_request.JPG)
 
 ## Step 3
 
@@ -32,7 +32,7 @@
   ```
 * Server returned **"Well done!"**.
 
-![03_successful_bypass](images/03_successful_bypass.__temp__.JPG)
+![03_successful_bypass](images/03_successful_bypass.JPG)
 
 ## Result
 

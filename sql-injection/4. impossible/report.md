@@ -15,7 +15,7 @@
 * Submitted the request.
 * The application returned the corresponding user information.
 
-![02_Normal_Query_Impossible](images/02_Normal_Query_Impossible.__temp__.JPG)
+![02_Normal_Query_Impossible](images/02_Normal_Query_Impossible.JPG)
 
 ---
 
@@ -31,7 +31,7 @@
 
 * The application rejected the malicious input and no SQL Injection occurred.
 
-![03_SQLi_Attempt_Impossible](images/03_SQLi_Attempt_Impossible.__temp__.JPG)
+![03_SQLi_Attempt_Impossible](images/03_SQLi_Attempt_Impossible.JPG)
 
 ---
 

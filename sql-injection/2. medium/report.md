@@ -15,7 +15,7 @@
 * Submitted the request.
 * The application returned the corresponding user information.
 
-![02_Normal_Query_Medium](images/02_Normal_Query_Medium.__temp__.JPG)
+![02_Normal_Query_Medium](images/02_Normal_Query_Medium.JPG)
 
 ---
 
@@ -25,7 +25,7 @@
 * Submitted the SQL Injection request.
 * Captured the HTTP POST request containing the user-supplied parameter.
 
-![03_Burp_Intercept_Medium](images/03_Burp_Intercept_Medium.__temp__.JPG)
+![03_Burp_Intercept_Medium](images/03_Burp_Intercept_Medium.JPG)
 
 ---
 
@@ -41,7 +41,7 @@
 
 * The application returned multiple records, confirming successful SQL Injection.
 
-![04_SQLi_Verification_Medium](images/04_SQLi_Verification_Medium.__temp__.JPG)
+![04_SQLi_Verification_Medium](images/04_SQLi_Verification_Medium.JPG)
 
 ---
 
@@ -59,7 +59,7 @@
 
 * Confirmed that both columns are reflected and can be used for data extraction.
 
-![05_Union_Select_Test_Medium](images/05_Union_Select_Test_Medium.__temp__.JPG)
+![05_Union_Select_Test_Medium](images/05_Union_Select_Test_Medium.JPG)
 
 ---
 
@@ -68,7 +68,7 @@
 * Verified successful UNION-based SQL Injection.
 * Confirmed that attacker-controlled data was displayed in the application response.
 
-![06_Exploitation_Result_Medium](images/06_Exploitation_Result_Medium.__temp__.JPG)
+![06_Exploitation_Result_Medium](images/06_Exploitation_Result_Medium.JPG)
 
 ---
 

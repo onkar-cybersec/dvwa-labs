@@ -3,7 +3,7 @@
 ## Step 1
 Tested a valid IP address and observed normal ping output.
 
-![Normal Request](images/01-normal.__temp__.JPG)
+![Normal Request](images/01-normal.JPG)
 
 ## Step 2
 Injected the following payload:
@@ -12,12 +12,12 @@ Injected the following payload:
 127.0.0.1; ls
 ```
 
-![List Files (ls)](images/02-list.__temp__.JPG)
+![List Files (ls)](images/02-list.JPG)
 
 ## Step 3
 The application executed the additional command and displayed the server directory listing.
 
-![Print Working Directory (pwd)](images/03-pwd.__temp__.JPG)
+![Print Working Directory (pwd)](images/03-pwd.JPG)
 
 ## Step 4
 Verified command execution by running additional commands such as:
@@ -26,7 +26,7 @@ Verified command execution by running additional commands such as:
 127.0.0.1; whoami
 ```
 
-![Current User (whoami)](images/04-whoami.__temp__.JPG)
+![Current User (whoami)](images/04-whoami.JPG)
 
 ## Result
 Successfully achieved operating system command execution on the server.

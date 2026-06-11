@@ -7,7 +7,7 @@
 * Set DVWA Security Level to **Medium**.
 * Navigate to **API Security**.
 
-![01_target_page](images/01_target_page.__temp__.JPG)
+![01_target_page](images/01_target_page.JPG)
 
 ---
 
@@ -22,7 +22,7 @@
 PUT /DVWA/vulnerabilities/api/v2/user/2
 ```
 
-![02_burp_request](images/02_burp_request.__temp__.JPG)
+![02_burp_request](images/02_burp_request.JPG)
 
 ---
 
@@ -40,7 +40,7 @@ PUT /DVWA/vulnerabilities/api/v2/user/2
 
 * Send the modified request.
 
-![03_burp_modified_level](images/03_burp_modified_level.__temp__.JPG)
+![03_burp_modified_level](images/03_burp_modified_level.JPG)
 
 ---
 

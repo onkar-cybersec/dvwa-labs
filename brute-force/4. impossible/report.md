@@ -3,7 +3,7 @@
 ## Step 1
 Captured the login request from the DVWA Brute Force page using Burp Suite.
 
-![Request Captured](images/01-request.__temp__.JPG)
+![Request Captured](images/01-request.JPG)
 
 ## Step 2
 Sent the request to Burp Intruder and configured an automated brute-force attack.
@@ -13,12 +13,12 @@ Sent the request to Burp Intruder and configured an automated brute-force attack
 ## Step 3
 Submitted multiple password payloads against the application.
 
-![Payloads Configured](images/03-payloads.__temp__.JPG)
+![Payloads Configured](images/03-payloads.JPG)
 
 ## Step 4
 Analyzed the responses and observed that all returned similar results.
 
-![Execution Results](images/04-results.__temp__.JPG)
+![Execution Results](images/04-results.JPG)
 
 ## Result
 The automated brute-force attack was unsuccessful.

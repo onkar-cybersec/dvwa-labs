@@ -5,7 +5,7 @@
 * Navigated to the SQL Injection module in DVWA.
 * Verified that the Security Level was set to Low.
 
-![01_Target_Page](images/01_Target_Page.__temp__.JPG)
+![01_Target_Page](images/01_Target_Page.JPG)
 
 ---
 
@@ -15,7 +15,7 @@
 * Submitted the request.
 * The application returned the corresponding user information.
 
-![02_Normal_Query](images/02_Normal_Query.__temp__.JPG)
+![02_Normal_Query](images/02_Normal_Query.JPG)
 
 ---
 
@@ -29,7 +29,7 @@
 * Submitted the request.
 * The application returned multiple records, confirming that user input was directly injected into the SQL query.
 
-![03_SQLi_Verification](images/03_SQLi_Verification.__temp__.JPG)
+![03_SQLi_Verification](images/03_SQLi_Verification.JPG)
 
 ---
 
@@ -50,7 +50,7 @@
   ```
 * The application generated an error when testing column 3.
 
-![04_Column_Count_Discovery](images/04_Column_Count_Discovery.__temp__.JPG)
+![04_Column_Count_Discovery](images/04_Column_Count_Discovery.JPG)
 
 ---
 
@@ -64,7 +64,7 @@
 * The application responded normally without any error.
 * Determined that the query contains 2 columns.
 
-![05_Valid_Column_Count](images/05_Valid_Column_Count.__temp__.JPG)
+![05_Valid_Column_Count](images/05_Valid_Column_Count.JPG)
 
 ---
 
@@ -78,7 +78,7 @@
 * The values `1` and `2` appeared in the output.
 * Confirmed that both columns are reflected and can be used for data extraction.
 
-![06_Union_Select_Test](images/06_Union_Select_Test.__temp__.JPG)
+![06_Union_Select_Test](images/06_Union_Select_Test.JPG)
 
 ---
 

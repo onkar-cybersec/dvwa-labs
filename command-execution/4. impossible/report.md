@@ -3,7 +3,7 @@
 ## Step 1
 Set the DVWA security level to Impossible.
 
-![Normal Ping Request](images/01.normal.__temp__.JPG)
+![Normal Ping Request](images/01.normal.JPG)
 
 ## Step 2
 Entered a valid IP address and confirmed that the ping functionality worked normally.
@@ -19,7 +19,7 @@ Attempted command injection using the following payload:
 8.8.8.8 ; ls
 ```
 
-![Injection Attempt Blocked](images/02.Fail.__temp__.JPG)
+![Injection Attempt Blocked](images/02.Fail.JPG)
 
 ## Step 4
 The application rejected the input and displayed an error indicating that the IP address was invalid.

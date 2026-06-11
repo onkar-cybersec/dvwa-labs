@@ -8,7 +8,7 @@
 * Observed multiple encrypted session tokens.
 * Identified that the application uses **AES-128-ECB** mode.
 
-![01_target_page](images/01_target_page.__temp__.JPG)
+![01_target_page](images/01_target_page.JPG)
 
 ### 2. Analyze the Token Structure
 
@@ -37,7 +37,7 @@
 
 * Submitted the forged token to the application.
 
-![02_admin_token_success](images/02_admin_token_success.__temp__.JPG)
+![02_admin_token_success](images/02_admin_token_success.JPG)
 
 ## Result
 

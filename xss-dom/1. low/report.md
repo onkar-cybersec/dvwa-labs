@@ -5,7 +5,7 @@
 * Opened XSS (DOM) page.
 * Security level set to Low.
 
-![01_target_page](images/01_target_page.__temp__.JPG)
+![01_target_page](images/01_target_page.JPG)
 
 ## Step 2
 
@@ -19,7 +19,7 @@
 
 * JavaScript executed successfully in the browser.
 
-![02_xss_execution](images/02_xss_execution.__temp__.JPG)
+![02_xss_execution](images/02_xss_execution.JPG)
 
 ## Result
 

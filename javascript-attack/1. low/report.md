@@ -5,7 +5,7 @@
 * Opened JavaScript Attacks page.
 * Security level set to Low.
 
-![01_target_page](images/01_target_page.__temp__.JPG)
+![01_target_page](images/01_target_page.JPG)
 
 ## Step 2
 
@@ -19,7 +19,7 @@ phrase=success
 token=8b479aefbd90795395b3e7089ae0dc09
 ```
 
-![02_burp_request](images/02_burp_request.__temp__.JPG)
+![02_burp_request](images/02_burp_request.JPG)
 
 ## Step 3
 
@@ -39,7 +39,7 @@ success
 * Modified the request and submitted it through Burp Repeater.
 * Application accepted the request.
 
-![03_successful_bypass](images/03_successful_bypass.__temp__.JPG)
+![03_successful_bypass](images/03_successful_bypass.JPG)
 
 ## Result
 

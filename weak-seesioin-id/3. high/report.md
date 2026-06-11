@@ -5,7 +5,7 @@
 * Opened Weak Session IDs page.
 * Security level set to High.
 
-![01_target_page](images/01_target_page.__temp__.JPG)
+![01_target_page](images/01_target_page.JPG)
 
 ## Step 2
 
@@ -20,7 +20,7 @@ c4ca4238a0b923820dcc509a6f75849b
 
 * Corresponds to `MD5(1)`.
 
-![02_md5_session_id_1](images/02_md5_session_id_1.__temp__.JPG)
+![02_md5_session_id_1](images/02_md5_session_id_1.JPG)
 
 ## Step 3
 
@@ -35,7 +35,7 @@ c81e728d9d4c2f636f067f89cc14862c
 
 * Corresponds to `MD5(2)`.
 
-![03_md5_session_id_2](images/03_md5_session_id_2.__temp__.JPG)
+![03_md5_session_id_2](images/03_md5_session_id_2.JPG)
 
 ## Step 4
 
@@ -50,7 +50,7 @@ eccbc87e4b5ce2fe28308fd9f2a7baf3
 
 * Corresponds to `MD5(3)`.
 
-![04_predicted_md5_session_id](images/04_predicted_md5_session_id.__temp__.JPG)
+![04_predicted_md5_session_id](images/04_predicted_md5_session_id.JPG)
 
 ## Result
 

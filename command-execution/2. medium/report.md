@@ -7,7 +7,7 @@ Tested the following payload:
 127.0.0.1; ls
 ```
 
-![Normal Attempt](images/01-normal.__temp__.JPG)
+![Normal Attempt](images/01-normal.JPG)
 
 ## Step 2
 Observed that common command separators such as `;` were blocked by the application.
@@ -19,7 +19,7 @@ Attempted a bypass using the following payload:
 127.0.0.1 & ls
 ```
 
-![Bypass Successful](images/02-bypass.__temp__.JPG)
+![Bypass Successful](images/02-bypass.JPG)
 
 ## Step 4
 The application executed the additional command, confirming that the filter could be bypassed.
