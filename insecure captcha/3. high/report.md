@@ -4,13 +4,13 @@
 
 Opened the Insecure CAPTCHA page with security level set to High.
 
-![Target Page](screenshots/01-target-page.JPG)
+![Target Page](images/01-target-page.JPG)
 
 ## Step 2
 
 Entered a new password and intercepted the request using Burp Suite.
 
-![Normal Request](screenshots/02-normal-request.JPG)
+![Normal Request](images/02-normal-request.JPG)
 
 ## Step 3
 
@@ -20,7 +20,7 @@ Modified the `User-Agent` header:
 User-Agent: reCAPTCHA
 ```
 
-![User-Agent Modified](screenshots/03-user-agent-modified.JPG)
+![User-Agent Modified](images/03-user-agent-modified.JPG)
 
 ## Step 4
 
@@ -32,13 +32,13 @@ g-recaptcha-response=hidd3n_valu3
 
 and prepared the bypass request.
 
-![Bypass Payload](screenshots/04-bypass-payload.JPG)
+![Bypass Payload](images/04-bypass-payload.JPG)
 
 ## Result
 
 Forwarded the modified request and successfully changed the password.
 
-![Password Changed](screenshots/05-password-changed.JPG)
+![Password Changed](images/05-password-changed.JPG)
 
 ## Reason
 

@@ -3,22 +3,22 @@
 ## Step 1
 Opened the Insecure CAPTCHA page with security level set to Low.
 
-![Target Page](screenshots/01-target-page.JPG)
+![Target Page](images/01-target-page.JPG)
 
 ## Step 2
 Completed the CAPTCHA and reached the confirmation stage.
 
-![CAPTCHA Passed](screenshots/02-captcha-passed.JPG)
+![CAPTCHA Passed](images/02-captcha-passed.JPG)
 
 ## Step 3
 Intercepted the final request and confirmed it only used `step=2`.
 
-![Step 2 Request](screenshots/03-step2-request.JPG)
+![Step 2 Request](images/03-step2-request.JPG)
 
 ## Result
 The password was changed successfully.
 
-![Password Changed](screenshots/04-password-changed.JPG)
+![Password Changed](images/04-password-changed.JPG)
 
 ## Reason
 The CAPTCHA is checked only in step 1.  
